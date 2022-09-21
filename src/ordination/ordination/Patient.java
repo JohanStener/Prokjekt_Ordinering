@@ -1,11 +1,13 @@
 package ordination.ordination;
 
+import java.util.ArrayList;
+
 public class Patient {
     private String cprnr;
     private String navn;
     private double vaegt;
+    private ArrayList<Ordination> ordinations = new ArrayList<>();
 
-    // TODO: Link til Ordination
 
     public Patient(String cprnr, String navn, double vaegt) {
         this.cprnr = cprnr;

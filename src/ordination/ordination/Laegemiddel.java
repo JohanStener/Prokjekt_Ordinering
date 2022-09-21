@@ -6,6 +6,8 @@ public class Laegemiddel {
     private double enhedPrKgPrDoegnNormal;// faktor der anvendes hvis 25 kg <= patient vægt <= 120 kg
     private double enhedPrKgPrDoegnTung;  // faktor der anvendes hvis patient vægt > 120 kg 
     private String enhed;
+    private Ordination ordination;
+    // association --> 0..1 Ordination
 
     public Laegemiddel(String navn, double enhedPrKgPrDoegnLet, double enhedPrKgPrDoegnNormal, 
             double enhedPrKgPrDoegnTung, String enhed) {
@@ -39,5 +41,18 @@ public class Laegemiddel {
     @Override
     public String toString(){
         return navn;
+    }
+
+    public Ordination getOrdination(){
+        return ordination;
+    }
+
+    /**
+    * Sets the ordination as this laegemiddels's ordination.
+    */
+    public void setOrdination(Ordination ordination){
+        if (this.ordination != ordination){
+            this.ordination = ordination;
+        }
     }
 }

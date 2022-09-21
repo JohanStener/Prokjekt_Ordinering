@@ -3,12 +3,25 @@ package ordination.ordination;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public abstract class Ordination {
+public abstract class Ordination { // Er en superklasse
     private LocalDate startDen;
     private LocalDate slutDen;
 
     // TODO Link til Laegemiddel
     // TODO constructor (med specifikation)
+
+    /**
+    * Pre: patient != null
+     */
+    public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient){
+        this.startDen = startDen;
+        this.slutDen = slutDen;
+        patient.addOrdination(this);
+        /* Magnus ved ikke om "patient.addPatient(this);" skal
+        være på superklassens constructor eller kun på subklassen
+        constructorer..?
+         */
+    }
 
     public LocalDate getStartDen() {
         return startDen;

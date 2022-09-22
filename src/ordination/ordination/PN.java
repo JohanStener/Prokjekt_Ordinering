@@ -17,8 +17,9 @@ public class PN extends Ordination {
      * @param slutDen
      * @param patient
      * @param laegemiddel
+     * @param antal
      */
-    public PN(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel) {
+    public PN(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel, final double antal) {
         super(startDen, slutDen, patient, laegemiddel);
     }
 
@@ -34,10 +35,7 @@ public class PN extends Ordination {
 
 
     public boolean givDosis(LocalDate givesDen) {
-        LocalDate startDato = datoer.get(0);
-        LocalDate slutDato = datoer.get(datoer.size() - 1);
-
-        if (givesDen.isAfter(startDato) && givesDen.isBefore(slutDato)) {
+        if (givesDen.isAfter(getStartDen()) && givesDen.isBefore(getSlutDen())) {
             datoer.add(givesDen);
             return true;
         }

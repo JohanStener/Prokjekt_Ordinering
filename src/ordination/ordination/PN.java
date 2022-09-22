@@ -17,9 +17,9 @@ public class PN extends Ordination {
      * @param slutDen
      * @param patient
      * @param laegemiddel
-     * @param antal
+     * @param antalEnheder
      */
-    public PN(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel, final double antal) {
+    public PN(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel, final double antalEnheder) {
         super(startDen, slutDen, patient, laegemiddel);
     }
 

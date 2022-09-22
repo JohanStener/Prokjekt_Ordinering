@@ -8,11 +8,11 @@ public abstract class Ordination { // Er en superklasse
     private LocalDate slutDen;
     private Laegemiddel laegemiddel;
 
-    // TODO Link til Laegemiddel
     // TODO constructor (med specifikation)
 
     /**
     * Pre: patient != null
+     *
      */
     public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient, Laegemiddel laegemiddel){
         this.startDen = startDen;

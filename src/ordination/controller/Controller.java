@@ -96,7 +96,7 @@ public class Controller {
      * Pre: ordination og dato er ikke null
      */
     public void ordinationPNAnvendt(PN ordination, LocalDate dato) {
-        // TODO
+        ordination.givDosis(dato);
     }
 
     /**
@@ -115,8 +115,7 @@ public class Controller {
      * ordinationer.
      * Pre: laegemiddel er ikke null
      */
-    public int antalOrdinationerPrVægtPrLægemiddel(double vægtStart,
-                                                   double vægtSlut, Laegemiddel laegemiddel) {
+    public int antalOrdinationerPrVægtPrLægemiddel(double vægtStart, double vægtSlut, Laegemiddel laegemiddel) {
         // TODO
         return 0;
     }

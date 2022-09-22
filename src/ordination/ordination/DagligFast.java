@@ -12,10 +12,12 @@ public class DagligFast extends Ordination{
      * @param startDen
      * @param slutDen
      * @param patient
+     * @param laegemiddel
      */
-    public DagligFast(LocalDate startDen, LocalDate slutDen, Patient patient) {
-        super(startDen, slutDen, patient);
+    public DagligFast(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel) {
+        super(startDen, slutDen, patient, laegemiddel);
     }
+
 
     @Override
     public double samletDosis() {
@@ -34,7 +36,7 @@ public class DagligFast extends Ordination{
 
     @Override
     public String getType() {
-        return null;
+        return "Daglig fast";
     }
 
     public Dosis[] getDoses() {

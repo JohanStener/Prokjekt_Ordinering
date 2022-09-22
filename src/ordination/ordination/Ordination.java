@@ -14,14 +14,11 @@ public abstract class Ordination { // Er en superklasse
     /**
     * Pre: patient != null
      */
-    public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient){
+    public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient, Laegemiddel laegemiddel){
         this.startDen = startDen;
         this.slutDen = slutDen;
+        this.laegemiddel=laegemiddel;
         patient.addOrdination(this);
-        /* Magnus ved ikke om "patient.addPatient(this);" skal
-        være på superklassens constructor eller kun på subklassen
-        constructorer..?
-         */
     }
 
     public LocalDate getStartDen() {

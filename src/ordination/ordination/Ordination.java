@@ -8,7 +8,6 @@ public abstract class Ordination { // Er en superklasse
     private LocalDate slutDen;
     private Laegemiddel laegemiddel;
 
-    // TODO constructor (med specifikation)
 
     /**
     * Pre: patient != null

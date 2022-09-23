@@ -14,6 +14,20 @@ class PNTest {
         PN pn;
     }*/
 
+    @Test
+    void TC40_Constructor(){
+        // Arrange
+        LocalDate StartDen = LocalDate.of(2022, 9, 1);
+        LocalDate SlutDen = LocalDate.of(2022, 9, 10);
+        Patient patient = new Patient("94958", "Johan", 80);
+        Laegemiddel lm = new Laegemiddel("Ipren", 0.1, 0.2, 0.3, "Dråber");
+
+        // Act + assert
+        PN pn = new PN(StartDen, SlutDen, patient, lm, 5);
+
+        assertNotNull(pn);
+    }
+
 
     @Test
     void TC_36_givDosis() {
@@ -139,6 +153,8 @@ class PNTest {
         // Assert
         assertEquals(3.75, actual);
     }
+
+
 
 
     @Test

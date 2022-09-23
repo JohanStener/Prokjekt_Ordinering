@@ -218,19 +218,31 @@ class DagligFastTest {
     @Test
     void TC12_OrdinationOprettet(){
         // Arrange
-        OrdinationOprettet1 = new DagligFast(LocalDate.of(2022, 9, 20), LocalDate.of(2022, 9, 29), p3, l3);
-
+        LocalDate StartDen = LocalDate.of(2022, 9, 1);
+        LocalDate SlutDen = LocalDate.of(2022, 9, 10);
+        Patient patient = new Patient("94958", "Johan", 80);
+        Laegemiddel lm = new Laegemiddel("Ipren", 0.1, 0.2, 0.3, "Dråber");
 
         // Act
-
+        DagligFast dagligFast = new DagligFast(StartDen, SlutDen, patient, lm);
 
         // Assert
-
+        assertNotNull(dagligFast);
     }
 
     @Test
     void TC13_OrdinationOprettet(){
+        // Arrange
+        LocalDate StartDen = LocalDate.of(2022, 9, 1);
+        LocalDate SlutDen = LocalDate.of(2022, 9, 10);
+        Patient patient = new Patient("94958", "Johan", 80);
+        Laegemiddel lm = new Laegemiddel("Ipren", 0.1, 0.2, 0.3, "Dråber");
 
+        // Act
+        DagligFast dagligFast = new DagligFast(StartDen, SlutDen, patient, lm);
+
+        // Assert
+        assertNotNull(dagligFast);
     }
 
 }

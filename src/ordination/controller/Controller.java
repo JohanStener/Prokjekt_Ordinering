@@ -4,11 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-import ordination.ordination.DagligFast;
-import ordination.ordination.DagligSkaev;
-import ordination.ordination.Laegemiddel;
-import ordination.ordination.PN;
-import ordination.ordination.Patient;
+import ordination.ordination.*;
 import ordination.storage.Storage;
 
 public class Controller {
@@ -96,7 +92,14 @@ public class Controller {
      * Pre: ordination og dato er ikke null
      */
     public void ordinationPNAnvendt(PN ordination, LocalDate dato) {
-        // TODO
+        LocalDate startDato = ordination.getStartDen();
+        LocalDate slutDato = ordination.getSlutDen();
+        if(dato.isAfter(startDato) && dato.isBefore(slutDato)){
+            ordination.givDosis(dato);
+        }
+        else{
+            throw new IllegalArgumentException("Datoen er ikke indenfor gyldighedsperioden");
+        }
     }
 
     /**

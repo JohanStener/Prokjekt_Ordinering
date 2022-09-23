@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class PN extends Ordination {
     private ArrayList<LocalDate> datoer = new ArrayList<>();
 
+
+
     // altid den samme
     private double antalEnheder;
 
@@ -21,8 +23,8 @@ public class PN extends Ordination {
      */
     public PN(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel, final double antalEnheder) {
         super(startDen, slutDen, patient, laegemiddel);
+        this.antalEnheder = antalEnheder;
     }
-
 
     /**
      * Registrerer at der er givet en dosis paa dagen givesDen
@@ -35,7 +37,7 @@ public class PN extends Ordination {
 
 
     public boolean givDosis(LocalDate givesDen) {
-        if (givesDen.isAfter(getStartDen()) && givesDen.isBefore(getSlutDen())) {
+        if (givesDen.isAfter(getStartDen().minusDays(1)) && givesDen.isBefore(getSlutDen().plusDays(1))) {
             datoer.add(givesDen);
             return true;
         }
@@ -56,7 +58,7 @@ public class PN extends Ordination {
 
 
     public double samletDosis() {
-        return datoer.size() * antalEnheder;
+        return datoer.size() * getAntalEnheder();
     }
 
     /**
@@ -72,4 +74,7 @@ public class PN extends Ordination {
         return antalEnheder;
     }
 
+    public ArrayList<LocalDate> getDatoer() {
+        return new ArrayList<>(datoer);
+    }
 }

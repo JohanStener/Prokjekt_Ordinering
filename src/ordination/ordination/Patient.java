@@ -35,7 +35,7 @@ public class Patient {
         this.vaegt = vaegt;
     }
 
-    //TODO: Metoder (med specifikation) til at vedligeholde link til Ordination
+
     /**
      * Adds the ordination to this patient,
      * if they aren't connected.

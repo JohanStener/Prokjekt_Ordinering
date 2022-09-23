@@ -21,6 +21,7 @@ public class PN extends Ordination {
      */
     public PN(final LocalDate startDen, final LocalDate slutDen, final Patient patient, final Laegemiddel laegemiddel, final double antalEnheder) {
         super(startDen, slutDen, patient, laegemiddel);
+        this.antalEnheder = antalEnheder;
     }
 
 
@@ -38,15 +39,23 @@ public class PN extends Ordination {
         if (givesDen.isAfter(getStartDen()) && givesDen.isBefore(getSlutDen())) {
             datoer.add(givesDen);
             return true;
+        }else if (givesDen.isEqual(getStartDen()) || givesDen.isEqual(getSlutDen())){
+            datoer.add(givesDen);
+            return true;
         }
 
         return false;
     }
 
     public double doegnDosis() {
-        LocalDate førsteDagGivet = datoer.get(0);
-        LocalDate sidsteDagGivet = datoer.get(datoer.size() - 1);
-        return samletDosis() / (ChronoUnit.DAYS.between(førsteDagGivet, sidsteDagGivet) + 1);
+        if (datoer.isEmpty()){
+            return 0;
+        }else {
+            LocalDate førsteDagGivet = datoer.get(0);
+            LocalDate sidsteDagGivet = datoer.get(datoer.size() - 1);
+            return samletDosis() / (ChronoUnit.DAYS.between(førsteDagGivet, sidsteDagGivet) + 1);
+        }
+
     }
 
     @Override

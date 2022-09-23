@@ -108,11 +108,12 @@ public class Controller {
      * Pre: patient og lægemiddel er ikke null
      */
     public double anbefaletDosisPrDoegn(Patient patient, Laegemiddel laegemiddel) {
+
         double vaegt = patient.getVaegt();
         if (vaegt < 25) {
             vaegt = vaegt * laegemiddel.getEnhedPrKgPrDoegnLet();
         }
-        if (vaegt <= 120) {
+        else if (vaegt <= 120) {
             vaegt = vaegt * laegemiddel.getEnhedPrKgPrDoegnNormal();
         } else {
             vaegt = vaegt * laegemiddel.getEnhedPrKgPrDoegnTung();

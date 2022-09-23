@@ -65,7 +65,8 @@ public class DagligFast extends Ordination{
             Dosis dosis = new Dosis(tid, antal);
             doses[3] = dosis;
             return dosis;
+        }else {
+            throw new RuntimeException("Antal dosis må ikke overstige 4");
         }
-        throw new RuntimeException("Antal dosis må ikke overstige 4");
     }
 }

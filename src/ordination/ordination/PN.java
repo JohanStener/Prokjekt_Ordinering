@@ -40,15 +40,23 @@ public class PN extends Ordination {
         if (givesDen.isAfter(getStartDen().minusDays(1)) && givesDen.isBefore(getSlutDen().plusDays(1))) {
             datoer.add(givesDen);
             return true;
+        }else if (givesDen.isEqual(getStartDen()) || givesDen.isEqual(getSlutDen())){
+            datoer.add(givesDen);
+            return true;
         }
 
         return false;
     }
 
     public double doegnDosis() {
-        LocalDate førsteDagGivet = datoer.get(0);
-        LocalDate sidsteDagGivet = datoer.get(datoer.size() - 1);
-        return samletDosis() / (ChronoUnit.DAYS.between(førsteDagGivet, sidsteDagGivet) + 1);
+        if (datoer.isEmpty()){
+            return 0;
+        }else {
+            LocalDate førsteDagGivet = datoer.get(0);
+            LocalDate sidsteDagGivet = datoer.get(datoer.size() - 1);
+            return samletDosis() / (ChronoUnit.DAYS.between(førsteDagGivet, sidsteDagGivet) + 1);
+        }
+
     }
 
     @Override

@@ -104,7 +104,9 @@ public class Controller {
         LocalDate slutDato = ordination.getSlutDen();
         if (dato.isAfter(startDato) && dato.isBefore(slutDato)) {
             ordination.givDosis(dato);
-        } else {
+        } else if (dato.isEqual(startDato) || dato.isEqual(slutDato)){
+            ordination.givDosis(dato);
+        }else {
             throw new IllegalArgumentException("Datoen er ikke indenfor gyldighedsperioden");
         }
     }

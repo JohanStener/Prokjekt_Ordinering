@@ -49,14 +49,23 @@ public class DagligFast extends Ordination{
 
     public Dosis createDosis(LocalTime tid, double antal){
 
-        if (doses.length < 4){
+        if (LocalTime.of(8,0) == tid){
             Dosis dosis = new Dosis(tid, antal);
-            doses[counter] = dosis;
-            counter++;
+            doses[0] = dosis;
             return dosis;
-        }else {
-            throw new RuntimeException("Antal dosis må ikke overstige 4");
+        }else if (LocalTime.of(14,0) == tid){
+            Dosis dosis = new Dosis(tid, antal);
+            doses[1] = dosis;
+            return dosis;
+        } else if (LocalTime.of(20,0) == tid) {
+            Dosis dosis = new Dosis(tid, antal);
+            doses[2] = dosis;
+            return dosis;
+        }else if (LocalTime.of(2,0) == tid){
+            Dosis dosis = new Dosis(tid, antal);
+            doses[3] = dosis;
+            return dosis;
         }
-
+        throw new RuntimeException("Antal dosis må ikke overstige 4");
     }
 }

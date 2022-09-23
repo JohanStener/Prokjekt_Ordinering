@@ -305,7 +305,72 @@ class ControllerTest {
     }
 
     @Test
-    void anbefaletDosisPrDoegn() {
+    void TC55_Vægt_24_Faktor_001_anbefaletDosisPrDoegn() {
+        // Arrange
+        Controller controller = new Controller();
+        Patient patient = new Patient("94958", "Johan", 24);
+        Laegemiddel lm = new Laegemiddel("Methotrexat", 0.01, 0.015, 0.02, "Styk");
 
+        // Act
+        double actual = controller.anbefaletDosisPrDoegn(patient, lm);
+
+        // Assert
+        assertEquals(0.24,actual);
+    }
+
+    @Test
+    void TC56_Vægt_24_Faktor_0015_anbefaletDosisPrDoegn() {
+        // Arrange
+        Controller controller = new Controller();
+        Patient patient = new Patient("94958", "Johan", 25);
+        Laegemiddel lm = new Laegemiddel("Methotrexat", 0.01, 0.015, 0.02, "Styk");
+
+        // Act
+        double actual = controller.anbefaletDosisPrDoegn(patient, lm);
+
+        // Assert
+        assertEquals(0.375,actual);
+    }
+
+    @Test
+    void TC57_Vægt_24_Faktor_0015_anbefaletDosisPrDoegn() {
+        // Arrange
+        Controller controller = new Controller();
+        Patient patient = new Patient("94958", "Johan", 50);
+        Laegemiddel lm = new Laegemiddel("Methotrexat", 0.01, 0.015, 0.02, "Styk");
+
+        // Act
+        double actual = controller.anbefaletDosisPrDoegn(patient, lm);
+
+        // Assert
+        assertEquals(0.75,actual);
+    }
+
+    @Test
+    void TC58_Vægt_24_Faktor_0015_anbefaletDosisPrDoegn() {
+        // Arrange
+        Controller controller = new Controller();
+        Patient patient = new Patient("94958", "Johan", 120);
+        Laegemiddel lm = new Laegemiddel("Methotrexat", 0.01, 0.015, 0.02, "Styk");
+
+        // Act
+        double actual = controller.anbefaletDosisPrDoegn(patient, lm);
+
+        // Assert
+        assertEquals(1.7999999999999998,actual);
+    }
+
+    @Test
+    void TC59_Vægt_24_Faktor_02_anbefaletDosisPrDoegn() {
+        // Arrange
+        Controller controller = new Controller();
+        Patient patient = new Patient("94958", "Johan", 121);
+        Laegemiddel lm = new Laegemiddel("Methotrexat", 0.01, 0.015, 0.02, "Styk");
+
+        // Act
+        double actual = controller.anbefaletDosisPrDoegn(patient, lm);
+
+        // Assert
+        assertEquals(2.42,actual);
     }
 }

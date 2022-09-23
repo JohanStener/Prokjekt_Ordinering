@@ -23,6 +23,20 @@ class PNTest {
         Laegemiddel lm = new Laegemiddel("Ipren", 0.1, 0.2, 0.3, "Dråber");
 
         // Act + assert
+        PN pn = new PN(StartDen, SlutDen, patient, lm, 1);
+
+        assertNotNull(pn);
+    }
+
+    @Test
+    void TC41_Constructor(){
+        // Arrange
+        LocalDate StartDen = LocalDate.of(2022, 9, 1);
+        LocalDate SlutDen = LocalDate.of(2022, 9, 10);
+        Patient patient = new Patient("94958", "Johan", 80);
+        Laegemiddel lm = new Laegemiddel("Ipren", 0.1, 0.2, 0.3, "Dråber");
+
+        // Act + assert
         PN pn = new PN(StartDen, SlutDen, patient, lm, 5);
 
         assertNotNull(pn);
@@ -95,7 +109,7 @@ class PNTest {
     }
 
     @Test
-    void TC17_6samlet_10Dage_doegnDosis() {
+    void TC28_5Enheder_5Dage_doegnDosis() {
         // Arrange
         LocalDate StartDen = LocalDate.of(2022, 9, 1);
         LocalDate SlutDen = LocalDate.of(2022, 9, 10);

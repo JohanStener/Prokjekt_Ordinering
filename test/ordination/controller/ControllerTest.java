@@ -1,26 +1,26 @@
 package ordination.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class ControllerTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void opretPNOrdination() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void opretDagligFastOrdination() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void opretDagligSkaevOrdination() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void ordinationPNAnvendt() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void anbefaletDosisPrDoegn() {
     }
 }

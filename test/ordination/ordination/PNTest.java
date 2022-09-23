@@ -1,22 +1,22 @@
 package ordination.ordination;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class PNTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void givDosis() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void doegnDosis() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getType() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void samletDosis() {
     }
 }

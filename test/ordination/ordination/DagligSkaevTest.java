@@ -1,18 +1,18 @@
 package ordination.ordination;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class DagligSkaevTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void opretDosis() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void samletDosis() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void doegnDosis() {
     }
 }

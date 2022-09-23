@@ -1,14 +1,14 @@
 package ordination.ordination;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class DagligFastTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void samletDosis() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void doegnDosis() {
     }
 }

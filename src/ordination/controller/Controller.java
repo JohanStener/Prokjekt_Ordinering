@@ -60,6 +60,11 @@ public class Controller {
             throw new IllegalArgumentException();
         } else {
             DagligFast dagligFast = new DagligFast(startDen, slutDen, patient, laegemiddel);
+            dagligFast.createDosis(LocalTime.of(8,0), morgenAntal);
+            dagligFast.createDosis(LocalTime.of(14,0),middagAntal);
+            dagligFast.createDosis(LocalTime.of(20,0), aftenAntal);
+            dagligFast.createDosis(LocalTime.of(2,0), natAntal);
+
             return dagligFast;
         }
     }
@@ -81,6 +86,9 @@ public class Controller {
             throw new IllegalArgumentException();
         } else {
             DagligSkaev dagligSkaev = new DagligSkaev(startDen, slutDen, patient, laegemiddel);
+            for (int i = 0; i < klokkeSlet.length; i++) {
+                dagligSkaev.opretDosis(klokkeSlet[i], antalEnheder[i]);
+            }
             return dagligSkaev;
         }
     }

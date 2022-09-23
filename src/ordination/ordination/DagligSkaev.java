@@ -43,7 +43,7 @@ public class DagligSkaev extends Ordination {
             sum += d.getAntal();
         }
         return sum;
-        //return samletDosis() / antalDage();
+
     }
 
     @Override
